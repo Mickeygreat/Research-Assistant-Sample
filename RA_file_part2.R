@@ -16,7 +16,7 @@ yearlist <- c(2007:2021)
 # *reading for same years data-CPDP*
 for (i in yearlist){
   filename <- paste0("HUD_Funding", i) # Concatenate Strings in R
-  wd <- paste0("/Users/mickeyyeh/Desktop/Research Assistant/Part2 - Node Details/HUD Funding/Excel_Output_with_same_source/CPDP_all_working_file.xlsx")
+  wd <- paste0("/your/file/location/CPDP_all_working_file.xlsx")
   assign(filename, read_excel(wd, sheet = as.character(i)))
 }
 
@@ -27,7 +27,7 @@ dfs <- ls()[sapply(mget(ls(), .GlobalEnv), is.data.frame)] # created before othe
 ##-- reading Homelessness dataset --##
 for (i in yearlist){
   filename <- paste0("df", i) # Concatenate Strings in R
-  wd <- paste0("/Users/mickeyyeh/Desktop/Research Assistant/Homelessness data/2007-2021-PIT-Counts-by-State (1).xlsx")
+  wd <- paste0("/your/file/location/data.xlsx")
   assign(filename, read_excel(wd, sheet = as.character(i)))
 }
 # NOTE: 2017-2021 missing one row data => AS=row4
@@ -35,11 +35,11 @@ for (i in yearlist){
 
 
 ##-- reading Governor Data --##
-US_Governors_all <- read.csv("/Users/mickeyyeh/Desktop/Research Assistant/Part2 - Node Details/Governor/US_Governors_all.csv")
+US_Governors_all <- read.csv("/your/file/location/US_Governors_all.csv")
 
 
 ##-- reading Median Income Data --##
-Median_Income_By_State <- read_excel("/Users/mickeyyeh/Desktop/Research Assistant/Part2 - Node Details/Income/Median_Income_By_State.xlsx")
+Median_Income_By_State <- read_excel("/your/file/location/Median_Income_By_State.xlsx")
 
 
 
@@ -158,7 +158,7 @@ for (year in yearlist){
   df_nodeDetail <- as.data.frame(matrix_empty)
   df_nodeDetail[, c(5, 6)] <- as.numeric(unlist(df_nodeDetail[, c(5, 6)]))
   assign(df_name, df_nodeDetail)
-  # write.xlsx(df_nodeDetail, file="/Users/mickeyyeh/Desktop/Research Assistant/Part2 - Node Details/Excel_Output_with_first_data/Node_Details.xlsx", sheetName=df_name, append=TRUE, row.names=FALSE) # for HUD different files
-  write.xlsx(df_nodeDetail, file="/Users/mickeyyeh/Desktop/Research Assistant/Part2 - Node Details/HUD Funding/Excel_Output_with_same_source/Node_Details_same_CPDP.xlsx", sheetName=df_name, append=TRUE, row.names=FALSE) # for CPD same files
+  # write.xlsx(df_nodeDetail, file="/your/file/location/Node_Details.xlsx", sheetName=df_name, append=TRUE, row.names=FALSE) # for HUD different files
+  write.xlsx(df_nodeDetail, file="/your/file/location/Node_Details_same_CPDP.xlsx", sheetName=df_name, append=TRUE, row.names=FALSE) # for CPD same files
 }
 
