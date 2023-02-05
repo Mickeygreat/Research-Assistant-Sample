@@ -19,7 +19,7 @@ library(xtable)
 yearlist <- c(2007:2021)
 for (i in yearlist){
   filename <- paste0("df", i) # Concatenate Strings in R
-  wd <- paste0("/Users/Mickey_Yeh/Desktop/Research Assistant/Homelessness data/2007-2021-PIT-Counts-by-State (1).xlsx") # need to add xlsx!!
+  wd <- paste0("/the/file/location/data.xlsx") # need to add xlsx!!
   assign(filename, read_excel(wd, sheet = as.character(i)))
 }
 # NOTE: 2017-2021 missing one row data => AS=row4
