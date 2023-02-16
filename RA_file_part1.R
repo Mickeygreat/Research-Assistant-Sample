@@ -194,7 +194,7 @@ for (year in numberOfYears)
     class(stock.adjacency.df) # data frame
     stock.net <- network(stock.adjacency, matrix.type="adjacency")
     ## Saving NW Plot
-    png(filename = paste("~/Desktop/Homelessness Networking Graphs 2007-2021/NW_", a[year], ".png", sep= ""),
+    png(filename = paste("/the/file/location/NW_", a[year], ".png", sep= ""),
         width = 888,
         height = 571)
     gplot(stock.net, displaylabels = T) # library(statnet)
