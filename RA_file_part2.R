@@ -9,7 +9,7 @@ yearlist <- c(2007:2021)
 # *reading for different years-HUD*
 # for (i in yearlist){
 #   filename <- paste0("HUD_Funding", i) # Concatenate Strings in R
-#   wd <- paste0("/Users/mickeyyeh/Desktop/Research Assistant/Part2 - Node Details/HUD Funding/HUD_Funding_Working_File.xlsx")
+#   wd <- paste0("/your/file/location/HUD_Funding_Working_File.xlsx")
 #   assign(filename, read_excel(wd, sheet = as.character(i)))
 # }
 
@@ -146,7 +146,7 @@ for (year in yearlist){
   ##-- add HUD Funding --##
   states <- c(df2007$State[1:56]) # not including last col "total"
   for (i in 1:length(states)){
-    HUD_funding_year <- mget(paste0("HUD_Funding", year)) # use mget to tell it it's a dataframe or else will have errors!! # mget turns it into a list!!
+    HUD_funding_year <- mget(paste0("HUD_Funding", year)) # use mget to tell R it's a dataframe or else will have errors!! # mget turns it into a list!!
     subsetdata <- subset(HUD_funding_year[[1]], State == states[i]) # State is the State in HUD
     total_HUD_funding <- sum(subsetdata$`Grant Amount`)
     matrix_empty[i, 6] <- as.numeric(total_HUD_funding)
